@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Porsche Sales Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      <h1>PORSCHE ANALYTICS</h1>
+      <p>Car Sales Intelligence</p>
+    </div>
+
+    <div class="filter-group">
+      <label>Buscar Modelo</label>
+      <input id="searchModel" type="text" placeholder="Macan, 911..." />
+    </div>
+
+    <div class="filter-group">
+      <label>Buscar Cidade</label>
+      <input id="searchCity" type="text" placeholder="Seattle..." />
+    </div>
+
+    <div class="filter-group">
+      <label>Model Year</label>
+      <select id="yearFilter">
+        <option>Todos</option>
+        <option>2023</option>
+        <option>2024</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Pay Method</label>
+      <select id="paymentFilter">
+        <option>Todos</option>
+        <option>PIX</option>
+        <option>Transferência</option>
+        <option>Cartão</option>
+        <option>Financiamento</option>
+      </select>
+    </div>
+
+    <button onclick="resetFilters()">
+      Limpar filtros
+    </button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="content">
+
+    <header>
+      <h1>Car Sales Intelligence</h1>
+      <p>
+        Dashboard premium inspirado na Porsche Brasil
+      </p>
+    </header>
+
+    <!-- KPI -->
+    <section class="kpi-grid">
+
+      <div class="card">
+        <span>Total Vendas</span>
+        <h2 id="totalSales">0</h2>
+      </div>
+
+      <div class="card">
+        <span>Modelo Líder</span>
+        <h2 id="topModel">-</h2>
+      </div>
+
+      <div class="card">
+        <span>Cidade Líder</span>
+        <h2 id="topCity">-</h2>
+      </div>
+
+      <div class="card">
+        <span>Período de Pico</span>
+        <h2 id="topPeriod">-</h2>
+      </div>
+
+    </section>
+
+    <!-- CHARTS -->
+    <section class="charts-grid">
+
+      <div class="chart-card">
+        <h3>Modelos por Cidade</h3>
+        <canvas id="cityChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Métodos de Pagamento</h3>
+        <canvas id="paymentChart"></canvas>
+      </div>
+
+      <div class="chart-card full-width">
+        <h3>Evolução de Vendas</h3>
+        <canvas id="salesTrend"></canvas>
+      </div>
+
+    </section>
+
+    <!-- INSIGHTS -->
+    <section class="insights-card">
+
+      <h2>Insights Inteligentes</h2>
+
+      <div id="insights">
+        Carregando insights...
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
