@@ -29,8 +29,6 @@ Análise de sazonalidade
 Métodos de pagamento dominantes
 Preview
 
-(adicionar screenshots aqui)
-
 Autor
 
 Jessica Alves
